@@ -1,8 +1,7 @@
 import React from "react";
 
 const LoginPage = () => {
-    return
-    <main>
+    return<main>
         <h1>Login Page</h1>
     </main>
 }

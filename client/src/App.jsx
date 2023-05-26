@@ -5,8 +5,7 @@ import * as Pages from './pages'
 import './assets/app.css'
 
 const App = () => {
-    return
-    <>
+    return<>
         <Routes> 
             <Route path='/' element={<Pages.HomePage />}/>
             <Route path='/flashcard' element={<Pages.Flashcard />}/>

@@ -1,8 +1,7 @@
 import React from "react";
 
 const RegisterPage = () => {
-    return
-    <main>
+    return<main>
         <h1>Register Page</h1>
     </main>
 }

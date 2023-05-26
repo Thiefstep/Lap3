@@ -1,8 +1,7 @@
 import React from "react";
 
 const Flashcard = () => {
-    return
-    <main>
+    return<main>
         <h1>Flashcard</h1>
     </main>
 }
