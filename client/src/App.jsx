@@ -8,11 +8,11 @@ const App = () => {
     return
     <>
         <Routes> 
-            <Route path='/' element={Pages.HomePage />}/>
-            <Route path='/flashcard' element={Pages.Flashcard />}/>
-            <Route path='login' element={Pages.LoginPage/>}/>
-            <Route path='register' element={Pages.SignUpPage/>}/>
-            <Route path='/*' element={Pages.NotFound/>}/>
+            <Route path='/' element={<Pages.HomePage />}/>
+            <Route path='/flashcard' element={<Pages.Flashcard />}/>
+            <Route path='login' element={<Pages.LoginPage />}/>
+            <Route path='register' element={<Pages.SignUpPage />}/>
+            <Route path='/*' element={<Pages.NotFound />}/>
         </Routes>
     </>
 }
