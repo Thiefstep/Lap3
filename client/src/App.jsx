@@ -11,7 +11,7 @@ const App = () => {
             <Route path='/' element={<Pages.HomePage />}/>
             <Route path='/flashcard' element={<Pages.Flashcard />}/>
             <Route path='login' element={<Pages.LoginPage />}/>
-            <Route path='register' element={<Pages.SignUpPage />}/>
+            <Route path='register' element={<Pages.RegisterPage />}/>
             <Route path='/*' element={<Pages.NotFound />}/>
         </Routes>
     </>
