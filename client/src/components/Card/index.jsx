@@ -1,7 +1,6 @@
 import React from 'react';
-import { useEffect, useState } from 'react'
 
-const Flashcard = ({front, back}) => {
+const Card = ({front, back}) => {
 
     return(
         <div className="flashcard">
@@ -17,4 +16,4 @@ const Flashcard = ({front, back}) => {
     )
 }
 
-export default Flashcard
+export default Card

@@ -1,9 +1,13 @@
 import React from "react";
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
     return<main>
-        <h1>Home</h1>
+        <h1>FlashCard</h1>
+        <p>Welcome!</p>
+        <p>Use our flashcards to help you learn and retain information longer</p>
+
+        <button><Link to='/flashcard'>Go to FlashCards</Link></button>
     </main>
 }
 

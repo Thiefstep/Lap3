@@ -7,14 +7,14 @@ import './assets/app.css'
 
 const App = () => {
     return<>
-    <PageWrapper/>
         <Routes> 
-            <Route path='/' element={PageWrapper}/>
+            <Route path='/' element={<PageWrapper/>}>
             <Route index element={<Pages.HomePage />}/>
             <Route path='/flashcard' element={<Pages.Flashcard />}/>
             <Route path='/login' element={<Pages.LoginPage />}/>
             <Route path='/register' element={<Pages.RegisterPage />}/>
             <Route path='/*' element={<Pages.NotFound />}/>
+            </Route>
         </Routes>
     </>
 }
