@@ -5,6 +5,7 @@ import { loginAction } from '../actions';
 
 export const useSignup = () => {
 	const [isLoading, setIsLoading] = useState(null);
+	const [error, setError] = useState(null);
 	const { dispatch } = useAuth();
 
 	const errorCreate = (error) =>
@@ -21,6 +22,7 @@ export const useSignup = () => {
 
 	const signup = async (username, email, password) => {
 		setIsLoading(true);
+		setError(null);
 
 		const options = {
 			method: 'POST',
@@ -34,6 +36,7 @@ export const useSignup = () => {
 		const data = await res.json();
 
 		if (!res.ok) {
+			setError(data.error);
 			setIsLoading(false);
 			errorCreate(`${data.error}`);
 		}
@@ -45,5 +48,5 @@ export const useSignup = () => {
 		}
 	};
 
-	return { signup, isLoading };
+	return { signup, isLoading, error };
 };
