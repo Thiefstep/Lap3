@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const HomePage = () => {
     return<main>
@@ -7,7 +7,7 @@ const HomePage = () => {
         <p>Welcome!</p>
         <p>Use our flashcards to help you learn and retain information longer</p>
 
-        <button><Link to='/flashcard'>Go to FlashCards</Link></button>
+        <button><NavLink to='/flashcard' style={{textDecoration:'none'}}>Go to FlashCards</NavLink></button>
     </main>
 }
 

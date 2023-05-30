@@ -2,7 +2,7 @@ import React from 'react';
 
 const Card = ({front, back}) => {
 
-    return(
+    return<>
         <div className="flashcard">
             <div className='card'>
                 <div className='front'>
@@ -13,7 +13,7 @@ const Card = ({front, back}) => {
                 </div>
             </div>
         </div>
-    )
+    </>
 }
 
 export default Card
