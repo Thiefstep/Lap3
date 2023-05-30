@@ -5,7 +5,7 @@ const style = ({ isActive }) => ({ color: isActive ? '#2B061E': '#875053'})
 
 const PageWrapper = () =>{
     return<>
-    <header>
+    <header >
         <ul className='nav-list'>
             <li>
                 <NavLink to='/' styles={style}>Home</NavLink>
@@ -22,8 +22,10 @@ const PageWrapper = () =>{
                 </li>
             </ul>
         </ul>
-        <Outlet />
     </header>
+    <article>
+    <Outlet />
+    </article>
     </>
 }
 
