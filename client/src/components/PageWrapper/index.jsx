@@ -8,23 +8,24 @@ const PageWrapper = () =>{
     <header >
         <ul className='nav-list'>
             <li>
-                <NavLink to='/' styles={style}>Home</NavLink>
+                <NavLink to='/' className='nav-item' styles={style}>Home</NavLink>
             </li>
             <li>
-                <NavLink to='/flashcard' styles={style}>FlashCard</NavLink>
+                <NavLink to='/flashcard' className='nav-item' styles={style}>FlashCard</NavLink>
             </li>
+
             <ul className='nav-right'>
                 <li>
-                    <NavLink to='/register' styles={style}>Register</NavLink>
+                    <NavLink to='/register' className='nav-item' styles={style}>Register</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/login' styles={style}>Login</NavLink>
+                    <NavLink to='/login' className='nav-item' styles={style}>Login</NavLink>
                 </li>
             </ul>
         </ul>
     </header>
     <article>
-    <Outlet />
+        <Outlet />
     </article>
     </>
 }

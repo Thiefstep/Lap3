@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const LoginPage = () => {
     return<div className="home">
         
-        <form className="register"  action='login'>
+        <form className="register" action='login'>
             <h1>Login Page</h1>
             <label for='username'><b>Username</b></label>
             <input type='text' id='username' name='username' required />
