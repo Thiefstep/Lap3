@@ -10,5 +10,5 @@ const initialState = {
 export const FlashcardContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(flashcardsReducer, initialState);
 
-	return <FlashcardContext.Provider value={{ state, dispatch }}>{children}</FlashcardContext.Provider>;
+	return <FlashcardContext.Provider value={{ ...state, dispatch }}>{children}</FlashcardContext.Provider>;
 };
