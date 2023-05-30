@@ -2,18 +2,20 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const LoginPage = () => {
-    return<main>
+    return<div className="home">
         
-        <form action='login'>
+        <form className="register"  action='login'>
             <h1>Login Page</h1>
-            <label for='username'>Username</label>
+            <label for='username'><b>Username</b></label>
             <input type='text' id='username' name='username' required />
-            <label for='password'>Password</label>
+
+            <label for='password'><b>Password</b></label>
             <input type='password' id='password' name='password' required />
+
             <input type='submit' value='Login' />
             <p>Don't have an account?<NavLink to='/register'>Register</NavLink></p> 
         </form>
-    </main>
+    </div>
 }
 
 export default LoginPage

@@ -2,9 +2,9 @@ import React from "react";
 import { Card } from "../../components";
 
 const Flashcard = () => {
-    return<main>
+    return<div className="home">
         <Card/>
-    </main>
+    </div>
 }
 
 export default Flashcard

@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NotFound = () => {
-    return <main>
+    return <div className="home">
         <h1>404: Page not found</h1>
         <Link to="/">Return Home</Link>
-    </main>
+    </div>
 };
 
 export default NotFound;

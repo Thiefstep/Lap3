@@ -110,3 +110,32 @@ li{
     text-align: center;
     flex-direction: column;
 }
+
+.register{
+    background-color: #00ffbf;
+    text-align: center;
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10%;
+}
+.register h1{
+    padding-bottom: 2rem;
+}
+
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+input[type=submit]{
+    height: 50px;
+    width: 125px;
+    background-color: #FFAE00;
+    border-radius: 15%;
+}
