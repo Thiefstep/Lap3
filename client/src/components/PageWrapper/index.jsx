@@ -6,12 +6,22 @@ const style = ({ isActive }) => ({ color: isActive ? '#2B061E': '#875053'})
 const PageWrapper = () =>{
     return<>
     <header>
-        <nav>
-            <NavLink to='/' styles={style}>Home</NavLink>
-            <NavLink to='/flashcard' styles={style}>FlashCard</NavLink>
-            <NavLink to='/register' styles={style}>Register</NavLink>
-            <NavLink to='/login' styles={style}>Login</NavLink>
-        </nav>
+        <ul className='nav-list'>
+            <li>
+                <NavLink to='/' styles={style}>Home</NavLink>
+            </li>
+            <li>
+                <NavLink to='/flashcard' styles={style}>FlashCard</NavLink>
+            </li>
+            <ul className='nav-right'>
+                <li>
+                    <NavLink to='/register' styles={style}>Register</NavLink>
+                </li>
+                <li>
+                    <NavLink to='/login' styles={style}>Login</NavLink>
+                </li>
+            </ul>
+        </ul>
         <Outlet />
     </header>
     </>

@@ -1,14 +1,41 @@
+*{margin:0}
 
 body {
     background-color: #00C0FF;
 }
 
 button{
-    text-decoration: none;
     height: 70px;
     width: 150px;
     background-color: #FFAE00;
     border-radius: 15%;
+}
+
+li{
+    margin: 1rem;
+}
+
+.nav-list{
+    background-color: #6CDAFF;
+    height: 75px;
+    width: 100%;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    float: left;
+}
+
+.nav-right{
+    
+    list-style: none;
+    width: 85%;
+    display:flex;
+    justify-content: flex-end;
+    
+}
+.navLink{
+    text-decoration: none;
 }
 
 .card-holder {
@@ -68,4 +95,9 @@ button{
     align-items: center;
     justify-items: center;
     padding: 15px;
+}
+
+
+.home{
+    text-align: center;
 }
