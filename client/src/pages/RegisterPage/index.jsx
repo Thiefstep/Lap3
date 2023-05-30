@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useSignup } from '../../hooks/useSignup';
 
 const RegisterPage = () => {
@@ -34,7 +35,7 @@ const RegisterPage = () => {
 				</label>
 				<input type="text" id="username" name="username" onChange={handleInputUsername} />
 
-				<label htmlFor="Email">
+				<label htmlFor="email">
 					<b>Email</b>
 				</label>
 				<input type="email" id="email" name="email" onChange={handleInputEmail} />
@@ -44,12 +45,12 @@ const RegisterPage = () => {
 				</label>
 				<input type="password" id="password" name="password" onChange={handleInputPassword} />
 
-				<input disabled={isLoading} type="submit" value="Register" />
+				<button disabled={isLoading}>Register</button>
 				<p>
 					Have an account already?<NavLink to="/login">Login</NavLink>
 				</p>
+				{error && <ToastContainer />}
 			</form>
-			{error && <ToastContainer />}
 		</>
 	);
 };
