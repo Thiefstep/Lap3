@@ -8,7 +8,7 @@ A basic flashcard app, to practice and remember your own flashcards
 JavaScript
 ReactJs
 CSS
-HTMl
+HTML
 ## Features
 - Create your own flashcards 
 - Update and delete your flashcards
