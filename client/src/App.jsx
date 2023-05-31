@@ -7,9 +7,8 @@ import { useAuth } from './hooks/useAuth';
 import './assets/app.css';
 
 const App = () => {
-	
 	const { user } = useAuth();
-	return (
+	return <>
 		<Routes>
 			<Route path="/" element={<PageWrapper />}>
 				<Route index element={user ? <Pages.HomePage /> : <Navigate to="/login" />} />
@@ -19,7 +18,8 @@ const App = () => {
 				<Route path="/*" element={<Pages.NotFound />} />
 			</Route>
 		</Routes>
-	);
+		</>
+	;
 };
 
 export default App;

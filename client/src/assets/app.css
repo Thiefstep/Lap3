@@ -18,6 +18,22 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.body {
+    background-color: #00C0FF;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.dark {
+    background-color: #000000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
 
 button{
     height: 50px;
@@ -25,7 +41,6 @@ button{
     background-color: #FFAE00;
     border-radius: 30px;
 }
-
 
 /* --------------------------------Nav-----------------------------------*/
 

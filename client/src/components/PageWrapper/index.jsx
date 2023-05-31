@@ -1,12 +1,23 @@
-import React, {useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import '../../assets/app.css';
 import logo from '../../assets/logo.png'
+import '../../assets/app.css';
 
 const style = ({ isActive }) => (isActive ? { color: '#2B061E' } : { color: '#875053' });
 
 
 const PageWrapper = () => {
+	const [theme,setTheme]=useState('body')
+	const toggleTheme = () => {
+		if (theme === 'body'){
+			setTheme('dark')
+		} else {
+			setTheme('body')
+		}
+	}
+	useEffect(()=>{
+		document.body.className = theme;
+	},[theme])
 	return (
 		<>
 			<header>
@@ -38,6 +49,11 @@ const PageWrapper = () => {
 			<article>
 				<Outlet />
 			</article>
+			<footer>
+				<div className={`App{$theme}`}>
+					<button onClick={toggleTheme}>Toggle Theme</button>
+				</div>
+			</footer>
 		</>
 	);
 };
