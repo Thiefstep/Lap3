@@ -1,25 +1,58 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useSignup } from '../../hooks/useSignup';
 
 const RegisterPage = () => {
-    return<>
-        
-    <form className="register" action='register'>
-        <h1>Register Page</h1>
-        <label for='username'><b>Username</b></label>
-        <input type='text' id='username' name='username' required />
+	const [username, setUsername] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const { signup, isLoading, error } = useSignup();
 
+	const handleSubmit = async (e) => {
+		e.preventDefault();
 
-        <label for='Email'><b>Email</b></label>
-        <input type='email' id='email' name='email' required />
+		await signup(username, email, password);
+	};
 
-        <label for='password'><b>Password</b></label>
-        <input type='password' id='password' name='password' required />
+	const handleInputUsername = (e) => {
+		setUsername(e.target.value);
+	};
+	const handleInputEmail = (e) => {
+		setEmail(e.target.value);
+	};
+	const handleInputPassword = (e) => {
+		setPassword(e.target.value);
+	};
 
-        <input type='submit' value='Register' />
-        <p>Have an account already?<NavLink to='/login'>Login</NavLink></p> 
-    </form>
-</>
-}
+	return (
+		<>
+			<form className="register" onSubmit={handleSubmit}>
+				<h1>Register Page</h1>
+				<label htmlFor="username">
+					<b>Username</b>
+				</label>
+				<input type="text" id="username" name="username" onChange={handleInputUsername} />
 
-export default RegisterPage
+				<label htmlFor="email">
+					<b>Email</b>
+				</label>
+				<input type="email" id="email" name="email" onChange={handleInputEmail} />
+
+				<label htmlFor="password">
+					<b>Password</b>
+				</label>
+				<input type="password" id="password" name="password" onChange={handleInputPassword} />
+
+				<button disabled={isLoading}>Register</button>
+				<p>
+					Have an account already?<NavLink to="/login">Login</NavLink>
+				</p>
+				{error && <ToastContainer />}
+			</form>
+		</>
+	);
+};
+
+export default RegisterPage;
