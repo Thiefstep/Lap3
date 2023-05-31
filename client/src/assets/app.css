@@ -175,7 +175,7 @@ img {
 }
 
 
-/* -------------------------------- Forms (login, register) -----------------------------------*/
+/* -------------------------------- Forms (login, register, create) -----------------------------------*/
 
 .register{
     background-color: #00ffbf;
@@ -191,7 +191,6 @@ img {
     font-family: 'Balsamiq Sans', cursive;
     font-size: 30px;
 }
-
 
 input[type=text], input[type=password], input[type=email] {
     width: 100%;
@@ -209,4 +208,22 @@ input[type=submit]{
     width: 125px;
     background-color: #FFAE00;
     border-radius: 30px;
+}
+
+/*-------------------------------------Flashcards------------------------------------------------*/
+.flashbtn{
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flashbtn button {
+    margin: 25px;
+}
+button:hover {background-color: #e29b00}
+
+button:active {
+  background-color: #d18f00;
+  box-shadow: 0 5px #c08401;
+  transform: translateY(4px);
 }

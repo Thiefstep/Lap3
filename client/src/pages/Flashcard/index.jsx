@@ -17,8 +17,10 @@ const Flashcard = () => {
     return (
         <div className="home">
             <Card />
-            <button onClick={handlePreviousCard}>Previous</button>
-            <button onClick={handleNextCard}>Next</button>
+            <div className="flashbtn">
+                <button onClick={handlePreviousCard}>Previous</button>
+                <button onClick={handleNextCard}>Next</button>
+            </div>
         </div>
     );
 };
