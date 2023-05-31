@@ -8,7 +8,7 @@ const CreatePage = () =>{
             <input type='text' id='question' name='question' required/>
 
             <label htmlFor='answer'><b>Answers</b></label>
-            <textarea id='answer' name='answer' rows='5' cols='50' required/>
+            <textarea id='answer' name='answer' rows='5' cols='50'  required/>
 
             <button>Create</button>
         </form>
