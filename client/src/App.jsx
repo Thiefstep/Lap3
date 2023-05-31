@@ -15,6 +15,7 @@ const App = () => {
 				<Route path="/flashcard" element={user ? <Pages.Flashcard /> : <Navigate to="/login" />} />
 				<Route path="/login" element={!user ? <Pages.LoginPage /> : <Navigate to="/" />} />
 				<Route path="/register" element={!user ? <Pages.RegisterPage /> : <Navigate to="/" />} />
+				<Route path="/create" element={user ? <Pages.CreatePage /> : <Navigate to="/login" />} />
 				<Route path="/*" element={<Pages.NotFound />} />
 			</Route>
 		</Routes>
