@@ -18,6 +18,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+
 button{
     height: 50px;
     width: 150px;
@@ -29,8 +30,8 @@ button{
 /* --------------------------------Nav-----------------------------------*/
 
 .nav-list{
-    background-color: #6CDAFF;
-    height: 75px;
+    background-color: #FFAE00;
+    height: 60px;
     max-width: 100%;
     text-decoration: none;
     list-style: none;
@@ -55,7 +56,13 @@ li{
 .nav-item {
     text-decoration: none;
     list-style: none;
+    color: black;
 
+}
+
+img {
+    width: 75px;
+    height: 65px;
 }
 
 /* -------------------------------- Home - main div -----------------------------------*/

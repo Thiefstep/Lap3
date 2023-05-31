@@ -7,6 +7,7 @@ import { useAuth } from './hooks/useAuth';
 import './assets/app.css';
 
 const App = () => {
+	
 	const { user } = useAuth();
 	return (
 		<Routes>

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import '../../assets/app.css';
+import logo from '../../assets/logo.png'
 
 const style = ({ isActive }) => (isActive ? { color: '#2B061E' } : { color: '#875053' });
 
@@ -11,7 +13,7 @@ const PageWrapper = () => {
 				<ul className="nav-list">
 					<li>
 						<NavLink to="/" style={style}>
-							Home
+							<img src ={logo} alt ="logo" />
 						</NavLink>
 					</li>
 					<li>
