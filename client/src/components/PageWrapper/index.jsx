@@ -32,6 +32,11 @@ const PageWrapper = () => {
 							FlashCard
 						</NavLink>
 					</li>
+					<li>
+						<NavLink className = 'nav-item' to="/create" style={style}>
+							Create
+						</NavLink>
+					</li>
 					<ul className="nav-right">
 						<li>
 							<NavLink className = 'nav-item' to="/register" style={style}>
