@@ -12,23 +12,23 @@ const PageWrapper = () => {
 			<header>
 				<ul className="nav-list">
 					<li>
-						<NavLink to="/" style={style}>
+						<NavLink className = 'nav-item' to="/" style={style}>
 							<img src ={logo} alt ="logo" />
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/flashcard" style={style}>
+						<NavLink className = 'nav-item' to="/flashcard" style={style}>
 							FlashCard
 						</NavLink>
 					</li>
 					<ul className="nav-right">
 						<li>
-							<NavLink to="/register" style={style}>
+							<NavLink className = 'nav-item' to="/register" style={style}>
 								Register
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/login" style={style}>
+							<NavLink className = 'nav-item' to="/login" style={style}>
 								Login
 							</NavLink>
 						</li>
