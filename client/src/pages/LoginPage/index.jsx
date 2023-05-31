@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useLogin } from '../../hooks/useLogin';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useLogin } from '../../hooks/useLogin';
 
 const LoginPage = () => {
 	const [username, setUsername] = useState('');
@@ -29,11 +30,11 @@ const LoginPage = () => {
 				<label htmlFor="username">
 					<b>Username</b>
 				</label>
-				<input type="text" id="username" name="username" onClick={handleInputUsername} />
+				<input type="text" id="username" name="username" onChange={handleInputUsername} />
 				<label htmlFor="password">
 					<b>Password</b>
 				</label>
-				<input type="password" id="password" name="password" onClick={handleInputPassword} />
+				<input type="password" id="password" name="password" onChange={handleInputPassword} />
 
 				<input disabled={isLoading} type="submit" value="Login" />
 				<p>

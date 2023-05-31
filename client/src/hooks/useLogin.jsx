@@ -5,6 +5,7 @@ import { useAuth } from './useAuth';
 
 export const useLogin = () => {
 	const [isLoading, setIsLoading] = useState(null);
+	const [error, setError] = useState(null);
 	const { dispatch } = useAuth();
 
 	const errorCreate = (error) =>
@@ -21,6 +22,7 @@ export const useLogin = () => {
 
 	const login = async (username, password) => {
 		setIsLoading(true);
+		setError(null);
 
 		const options = {
 			method: 'POST',
@@ -36,6 +38,7 @@ export const useLogin = () => {
 		if (!res.ok) {
 			setIsLoading(false);
 			errorCreate(`${data.error}`);
+			setError(data.error);
 		}
 
 		if (res.ok) {
@@ -45,5 +48,5 @@ export const useLogin = () => {
 		}
 	};
 
-	return { login, isLoading };
+	return { login, isLoading, error };
 };
