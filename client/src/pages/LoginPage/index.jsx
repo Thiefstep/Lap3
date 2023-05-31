@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const LoginPage = () => {
+
 	return (
 		<div className="home">
 			<form className="register" action="login">
@@ -10,7 +11,6 @@ const LoginPage = () => {
 					<b>Username</b>
 				</label>
 				<input type="text" id="username" name="username" required />
-
 				<label htmlFor="password">
 					<b>Password</b>
 				</label>

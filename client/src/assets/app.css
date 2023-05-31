@@ -1,144 +1,190 @@
-* {
-	margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/*
+font-family: 'Balsamiq Sans', cursive;
+font-family: 'Montserrat', sans-serif;
+*/
+
+*{
+    margin:0;
 }
 
-header {
-	max-width: 100%;
+header{
+    max-width: 100%;
+
 }
 
 body {
-	background-color: #00c0ff;
+    background-color: #00C0FF;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* button {
-	height: 70px;
-	width: 150px;
-	background-color: #ffae00;
-	border-radius: 15%;
-} */
-
-li {
-	margin: 1rem;
+button{
+    height: 50px;
+    width: 150px;
+    background-color: #FFAE00;
+    border-radius: 30px;
 }
 
-.nav-list {
-	background-color: #6cdaff;
-	height: 75px;
-	max-width: 100%;
-	text-decoration: none;
-	list-style: none;
-	display: flex;
-	align-items: center;
+
+/* --------------------------------Nav-----------------------------------*/
+
+.nav-list{
+    background-color: #6CDAFF;
+    height: 75px;
+    max-width: 100%;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
 }
 
-.nav-right {
-	list-style: none;
-	width: 100%;
-	display: flex;
-	justify-content: flex-end;
-}
-.navLink {
-	text-decoration: none;
+.nav-right{
+    list-style: none;
+    width: 100%;
+    display:flex;
+    justify-content: flex-end;
+    margin-right: 40px;
+    
 }
 
+li{
+    margin: 1rem;
+    
+}
+
+.nav-item {
+    text-decoration: none;
+    list-style: none;
+
+}
+
+/* -------------------------------- Home - main div -----------------------------------*/
+
+.home{
+    max-width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.home h1{
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.content{
+    background-color: #00ffbf;
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+   
+}
+
+.content p, h1, button {
+    padding: 10px;
+}
+
+.content h1{
+    padding: 15px;
+    font-size: 60px;
+}
+
+/* -------------------------------- Cards -----------------------------------*/
 .card-holder {
-	display: flex;
-	justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .card {
-	margin: 40px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.3);
-	background-color: #00ffbf;
-	height: 300px;
-	width: 300px;
-	transform: rotateY(var(--rotate-y, 0));
-	transform-style: preserve-3d;
-	transition: 1500ms;
-	cursor: pointer;
-	transform: perspective(5000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 3px 2px rgba(0,0,0,0.3);
+    background-color: #00ffbf;
+    height: 300px;
+    width: 300px;
+    transform: rotateY(var(--rotate-y, 0));
+    transform-style: preserve-3d;
+    transition: 1500ms;
+    cursor: pointer;
+    transform: perspective(5000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
 }
 
 .card:hover {
-	--translate-y: -2px;
-	--rotate-y: 180deg;
-	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+    --translate-y: -2px;
+    --rotate-y: 180deg;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
 }
 
-.front,
-.back {
-	position: absolute;
-	padding: 1rem;
-	color: black;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	transform: rotateX(0deg);
+.front, .back {
+    position: absolute;
+    padding: 1rem;
+    color: black;
+    backface-visibility: hidden;
+    transform: rotateX(0deg)
 }
 
 .front {
-	font-size: 30px;
-	font-weight: bold;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .front p {
-	text-align: center;
+    text-align: center;
 }
 
 .back {
-	transform: rotateY(180deg);
-	width: 100%;
-	height: 100%;
-	font-size: 16px;
-	display: flex;
-	align-items: center;
-	justify-items: center;
-	padding: 15px;
+    transform: rotateY(180deg);
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: 15px;
 }
 
-.home {
-	max-width: 100%;
-	padding: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	flex-direction: column;
+
+/* -------------------------------- Forms (login, register) -----------------------------------*/
+
+.register{
+    background-color: #00ffbf;
+    text-align: center;
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10%;
+    font-family: 'Montserrat', sans-serif;
+}
+.register h1{
+    padding-bottom: 2rem;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 30px;
 }
 
-.register {
-	background-color: #00ffbf;
-	text-align: center;
-	width: 400px;
-	margin: 100px auto;
-	padding: 20px;
-	border-radius: 10%;
-}
-.register h1 {
-	padding-bottom: 2rem;
+
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-input[type='text'],
-input[type='password'],
-input[type='email'] {
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
-	border-radius: 10px;
-}
-
-input[type='submit'] {
-	height: 50px;
-	width: 125px;
-	background-color: #ffae00;
-	border-radius: 15%;
+input[type=submit]{
+    height: 50px;
+    width: 125px;
+    background-color: #FFAE00;
+    border-radius: 30px;
 }

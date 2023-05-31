@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const HomePage = () => {
+
 	return (
 		<div className="home">
 			<h1>FlashCard</h1>

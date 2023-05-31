@@ -3,6 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 const style = ({ isActive }) => (isActive ? { color: '#2B061E' } : { color: '#875053' });
 
+
 const PageWrapper = () => {
 	return (
 		<>
