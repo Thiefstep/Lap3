@@ -210,6 +210,12 @@ input[type=submit]{
     border-radius: 30px;
 }
 
+.register textarea{
+    max-width: 98%;
+    min-width: 98%;
+    border-radius: 30px;
+}
+
 /*-------------------------------------Flashcards------------------------------------------------*/
 .flashbtn{
     padding: 25px;
