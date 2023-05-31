@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "../../components";
 
 const Flashcard = () => {
-    return <div className="home">
-        <Card/>
-    </div>
-}
+    const [curCardId, setCurCardId] = useState(1);
 
-export default Flashcard
+    const handleNextCard = () => {
+        setCurCardId((prevCardId) => prevCardId + 1);
+    };
+
+    const handlePreviousCard = () => {
+        if (curCardId > 1) {
+            setCurCardId((prevCardId) => prevCardId - 1);
+        }
+    };
+
+    return (
+        <div className="home">
+            <Card />
+            <button onClick={handlePreviousCard}>Previous</button>
+            <button onClick={handleNextCard}>Next</button>
+        </div>
+    );
+};
+
+export default Flashcard;
