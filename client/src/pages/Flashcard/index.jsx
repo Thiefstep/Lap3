@@ -31,20 +31,21 @@ const Flashcard = () => {
 	}, [dispatch, user]);
 
 	const handleNextCard = () => {
-        if (curCardIndex < flashcards.length - 1) {
-            setCurCardIndex((prevIndex) => prevIndex + 1);
+        if (curCardId < flashcards.length) {
+            setCurCardId((prevCardId) => prevCardId + 1);
         } else {
-            setCurCardIndex(0);
+            setCurCardId(1);
         }
     };
+    
 
 	const handlePreviousCard = () => {
-		if (curCardId > 1) {
-			setCurCardId((prevCardId) => prevCardId - 1);
-		}else {
-            setCurCardId(flashcards.length - 1)
+        if (curCardId > 1) {
+            setCurCardId((prevCardId) => prevCardId - 1);
+        } else {
+            setCurCardId(flashcards.length);
         }
-	};
+    };
 
     
 
@@ -58,8 +59,8 @@ const Flashcard = () => {
                     return null;
                 })}
 			<div className="flashbtn">
-				<button onClick={handlePreviousCard}>Previous</button>
-				<button onClick={handleNextCard}>Next</button>
+				<button className='Prev' aria-label='Previous' onClick={handlePreviousCard}><b>Previous</b></button>
+				<button className='Next' aria-label='Next' onClick={handleNextCard}><b>Next</b></button>
 			</div>
 		</div>
 	);

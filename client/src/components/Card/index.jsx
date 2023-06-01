@@ -39,7 +39,7 @@ const Card = ({flashcard}) => {
                 <p>{flashcard.backSide}</p>
             </div>
             </div>
-                <button onClick={handleDeleteFlashcard}>Delete</button>
+                <button className='Delete' aria-label='Delete' onClick={handleDeleteFlashcard}><b>Delete</b></button>
             </div>
     </>
 }
