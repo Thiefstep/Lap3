@@ -223,6 +223,7 @@ input[type='submit'] {
 	max-width: 98%;
 	min-width: 98%;
 	border-radius: 30px;
+    padding: 10px;
 }
 
 /*-------------------------------------Flashcards------------------------------------------------*/
