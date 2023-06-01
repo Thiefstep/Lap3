@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { createFlashcards } from '../../actions';
-import { useFlashcards } from '../../hooks/useFlashcards';
-import { useAuth } from '../../hooks/useAuth';
+import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { createFlashcards } from "../../actions";
+import { useFlashcards } from "../../hooks/useFlashcards";
+import { useAuth } from "../../hooks/useAuth";
 
 const CreatePage = () => {
 	const { dispatch } = useFlashcards();

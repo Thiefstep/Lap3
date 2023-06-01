@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Card } from '../../components';
-import { useFlashcards } from '../../hooks/useFlashcards';
-import { useAuth } from '../../hooks/useAuth';
-import { setFlashcards } from '../../actions';
+import React, { useState, useEffect } from "react";
+import { Card, CardFilters } from "../../components";
+import { useFlashcards } from "../../hooks/useFlashcards";
+import { useAuth } from "../../hooks/useAuth";
+import { setFlashcards } from "../../actions";
 
 const Flashcard = () => {
 	const [curCardId, setCurCardId] = useState(1);
