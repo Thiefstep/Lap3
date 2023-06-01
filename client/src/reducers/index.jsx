@@ -2,6 +2,7 @@ export const flashcardsReducer = (state, action) => {
 	switch (action.type) {
 		case 'SET_FLASHCARDS':
 			return {
+				...state.flashcards,
 				flashcards: action.payload,
 			};
 		case 'CREATE_FLASHCARD':
@@ -9,7 +10,7 @@ export const flashcardsReducer = (state, action) => {
 				flashcards: [action.payload, ...state.flashcards],
 			};
 		case 'DELETE_FLASHCARD':
-			return { flashcards: state.flashcards.filter((f) => f._id !== action.payload._id) };
+			return { flashcards: state.flashcards.filter((f) => f._id !== action.payload._id), ...state.flashcards };
 		default:
 			return state;
 	}

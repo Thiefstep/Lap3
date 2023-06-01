@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Card, CardFilters } from "../../components";
-import { useFlashcards } from "../../hooks/useFlashcards";
-import { useAuth } from "../../hooks/useAuth";
-import { setFlashcards } from "../../actions";
+import React, { useState, useEffect } from 'react';
+import { Card, CardFilters } from '../../components';
+import { useFlashcards } from '../../hooks/useFlashcards';
+import { useAuth } from '../../hooks/useAuth';
+import { setFlashcards } from '../../actions';
 
 const Flashcard = () => {
 	const [curCardId, setCurCardId] = useState(1);
@@ -31,34 +31,37 @@ const Flashcard = () => {
 	}, [dispatch, user]);
 
 	const handleNextCard = () => {
-        if (curCardId < flashcards.length) {
-            setCurCardId((prevCardId) => prevCardId + 1);
-        } else {
-            setCurCardId(1);
-        }
-    };
-    
+		if (curCardId < flashcards.length) {
+			setCurCardId((prevCardId) => prevCardId + 1);
+		} else {
+			setCurCardId(1);
+		}
+	};
 
 	const handlePreviousCard = () => {
-        if (curCardId > 1) {
-            setCurCardId((prevCardId) => prevCardId - 1);
-        } else {
-            setCurCardId(flashcards.length);
-        }
-    };
+		if (curCardId > 1) {
+			setCurCardId((prevCardId) => prevCardId - 1);
+		} else {
+			setCurCardId(flashcards.length);
+		}
+	};
 
 	return (
 		<div className="home">
 			{flashcards &&
-                flashcards.map((f, index) => {
-                    if (index + 1 === curCardId) {
-                        return <Card key={f._id} flashcard={f} />;
-                    }
-                    return null;
-                })}
+				flashcards.map((f, index) => {
+					if (index + 1 === curCardId) {
+						return <Card key={f._id} flashcard={f} />;
+					}
+					return null;
+				})}
 			<div className="flashbtn">
-				<button className='Prev' aria-label='Previous' onClick={handlePreviousCard}><b>Previous</b></button>
-				<button className='Next' aria-label='Next' onClick={handleNextCard}><b>Next</b></button>
+				<button className="Prev" aria-label="Previous" onClick={handlePreviousCard}>
+					<b>Previous</b>
+				</button>
+				<button className="Next" aria-label="Next" onClick={handleNextCard}>
+					<b>Next</b>
+				</button>
 			</div>
 		</div>
 	);

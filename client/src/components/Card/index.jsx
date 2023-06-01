@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useFlashcards } from '../../hooks/useFlashcards';
-import { deleteFlashcard } from '../../actions';
+import { deleteFlashcard, setFlashcards } from '../../actions';
 import { useAuth } from '../../hooks/useAuth';
 
 const Card = ({ flashcard }) => {
-	const { dispatch } = useFlashcards();
+	const { flashcards, dispatch } = useFlashcards();
 	const { user } = useAuth();
 
 	const handleDeleteFlashcard = async () => {
@@ -17,7 +17,6 @@ const Card = ({ flashcard }) => {
 					Authorization: `Bearer ${user.token}`,
 				},
 			});
-			console.log(res);
 			const updatedFlashcards = await res.json();
 			if (res.ok) {
 				dispatch(deleteFlashcard(updatedFlashcards));
@@ -26,6 +25,27 @@ const Card = ({ flashcard }) => {
 			console.log(error);
 		}
 	};
+
+	useEffect(() => {
+		const fetchFlashcards = async () => {
+			try {
+				const res = await fetch('http://localhost:3000/flashcards', {
+					headers: {
+						Authorization: `Bearer ${user.token}`,
+						username: user.username,
+					},
+				});
+				const data = await res.json();
+
+				if (res.ok) {
+					dispatch(setFlashcards(data));
+				}
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		fetchFlashcards();
+	}, [flashcards, user, dispatch]);
 
 	return (
 		<>

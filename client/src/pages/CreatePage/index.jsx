@@ -92,7 +92,7 @@ const CreatePage = () => {
 				<label htmlFor="frontSide">
 					<b>Question</b>
 				</label>
-				<input type="text" id="frontSide" name="frontSide" onChange={handleInputQuestion} />
+				<input type="text" id="frontSide" name="frontSide" value={frontSide} onChange={handleInputQuestion} />
 
 				<label htmlFor="category">
 					<b>Category</b>
@@ -102,7 +102,7 @@ const CreatePage = () => {
 				<label htmlFor="backSide">
 					<b>Answer</b>
 				</label>
-				<textarea id="backSide" name="backSide" rows="5" cols="50" onChange={handleInputAnswer} />
+				<textarea id="backSide" name="backSide" rows="5" cols="50" value={backSide} onChange={handleInputAnswer} />
 
 				<button type="submit">Create</button>
 				<ToastContainer />
