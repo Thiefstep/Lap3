@@ -30,15 +30,15 @@ const Card = ({ flashcard }) => {
     <>
       <div className="flashcard">
         <div className="card">
-          <div className="front">
-            <p>{flashcard.frontSide}</p>
-          </div>
-          <div className="back">
-            <p>{flashcard.backSide}</p>
-          </div>
-        </div>
-        <button onClick={handleDeleteFlashcard}>Delete</button>
-      </div>
+            <div className="front">
+                <p>{flashcard.frontSide}</p>
+            </div>
+            <div className="back">
+                <p>{flashcard.backSide}</p>
+            </div>
+            </div>
+                <button className='Delete' aria-label='Delete' onClick={handleDeleteFlashcard}><b>Delete</b></button>
+            </div>
     </>
   );
 };

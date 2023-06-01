@@ -13,8 +13,7 @@ header {
 }
 
 body {
-	background-color: #00c0ff;
-	font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .body {
@@ -42,6 +41,9 @@ button {
 	border-radius: 30px;
 }
 
+p {
+    margin: 10px
+}
 /* --------------------------------Nav-----------------------------------*/
 
 .nav-list {
@@ -204,7 +206,7 @@ input[type='password'],
 input[type='email'] {
 	width: 100%;
 	padding: 12px 20px;
-	margin: 8px 0;
+	margin: 10px 0px 20px 0px;
 	display: inline-block;
 	border: 1px solid #ccc;
 	box-sizing: border-box;
@@ -213,6 +215,7 @@ input[type='email'] {
 }
 
 input[type='submit'] {
+    margin: 20px;
 	height: 50px;
 	width: 125px;
 	background-color: #ffae00;
@@ -243,5 +246,35 @@ button:hover {
 button:active {
 	background-color: #d18f00;
 	box-shadow: 0 5px #c08401;
+	transform: translateY(4px);
+}
+
+/*-----------------------------Button --------------------------------*/
+
+.Next{
+    background-color: #2DBF64;
+}
+
+.Next:hover {
+	background-color: #26a055;
+}
+
+.Next:active{
+    background-color: #1e8b48;
+	box-shadow: 0 5px #1c8042;
+	transform: translateY(4px);
+}
+
+.Delete{
+    background-color: #ed5650;
+}
+
+.Delete:hover {
+	background-color: #db4d48;
+}
+
+.Delete:active{
+    background-color: #c94843;
+	box-shadow: 0 5px #aa3d39;
 	transform: translateY(4px);
 }

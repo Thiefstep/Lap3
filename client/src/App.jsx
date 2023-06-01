@@ -8,7 +8,7 @@ import './assets/app.css';
 
 const App = () => {
 	const { user } = useAuth();
-	return <>
+	return <body className='box'>
 		<Routes>
 			<Route path="/" element={<PageWrapper />}>
 				<Route index element={user ? <Pages.HomePage /> : <Navigate to="/login" />} />
@@ -18,8 +18,9 @@ const App = () => {
 				<Route path="/create" element={user ? <Pages.CreatePage /> : <Navigate to="/login" />} />
 				<Route path="/*" element={<Pages.NotFound />} />
 			</Route>
+			
 		</Routes>
-		</>
+		</body>
 	;
 };
 
