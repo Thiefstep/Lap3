@@ -23,7 +23,6 @@ const Card = ({flashcard}) => {
         const updatedFlashcards = await res.json()
         if (res.ok) {
             dispatch(deleteFlashcard(updatedFlashcards));
-            window.location.reload()
         }
         } catch (error) {
             console.log(error);
