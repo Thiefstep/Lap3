@@ -20,10 +20,10 @@ const Card = ({flashcard}) => {
             Authorization: `Bearer ${user.token}`,
             },
         });
-        console.log(res)
         const updatedFlashcards = await res.json()
         if (res.ok) {
             dispatch(deleteFlashcard(updatedFlashcards));
+            window.location.reload()
         }
         } catch (error) {
             console.log(error);
@@ -40,7 +40,7 @@ const Card = ({flashcard}) => {
                 <p>{flashcard.backSide}</p>
             </div>
             </div>
-                <span onClick={handleDeleteFlashcard}>Delete</span>
+                <button onClick={handleDeleteFlashcard}>Delete</button>
             </div>
     </>
 }
