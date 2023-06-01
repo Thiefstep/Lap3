@@ -37,6 +37,12 @@ const CreatePage = () => {
 			theme: 'light',
 		});
 
+		const resetForm = () => {
+			setFrontSide('');
+			setBackSide('');
+			setCategory('');
+		};
+
 	const handleInputQuestion = (e) => {
 		setFrontSide(e.target.value);
 	};
@@ -49,9 +55,9 @@ const CreatePage = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-
+		
 		const flashcard = { frontSide, backSide, category, username:user.username };
-
+		
 		const options = {
 			method: 'POST',
 			body: JSON.stringify(flashcard),
@@ -60,7 +66,7 @@ const CreatePage = () => {
 				Authorization: `Bearer ${user.token}`,
 			},
 		};
-
+		
 		try {
 			const res = await fetch('http://localhost:3000/flashcards', options);
 			const data = await res.json();
@@ -70,12 +76,9 @@ const CreatePage = () => {
 			}
 
 			if (res.ok) {
-				setFrontSide('');
-				setBackSide('');
-				setCategory('');
-
 				successCreate('Flash card has been created!');
 				dispatch(createFlashcards(data));
+				resetForm()
 			}
 		} catch (error) {
 			console.log(error);
@@ -89,19 +92,19 @@ const CreatePage = () => {
 				<label htmlFor="frontSide">
 					<b>Question</b>
 				</label>
-				<input type="text" id="question" name="frontSide" onChange={handleInputQuestion} />
+				<input type="text" id="question" name="frontSide" value={frontSide} onChange={handleInputQuestion} />
 
 				<label htmlFor="category">
 					<b>Category</b>
 				</label>
-				<input type="text" id="category" name="category" onChange={handleInputCategory} />
+				<input type="text" id="category" name="category" value={category} onChange={handleInputCategory} />
 
 				<label htmlFor="backSide">
 					<b>Answer</b>
 				</label>
-				<textarea id="answer" name="backSide" rows="5" cols="50" onChange={handleInputAnswer} />
+				<textarea id="answer" name="backSide" rows="5" cols="50" value={backSide} onChange={handleInputAnswer} />
 
-				<button>Create</button>
+				<button type="submit">Create</button>
 				<ToastContainer />
 			</form>
 		</>
