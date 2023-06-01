@@ -10,28 +10,19 @@ const Card = ({ flashcard }) => {
   const handleDeleteFlashcard = async () => {
     const id = flashcard._id;
 
-const Card = ({flashcard}) => {
-    const { dispatch } = useFlashcards()
-    const { user } = useAuth()
-    
-
-    const handleDeleteFlashcard = async () => {
-        const id = flashcard._id
-        
-        try {
-        const res = await fetch(`http://localhost:3000/flashcards/${id}`, {
-            method: 'DELETE',
-            headers: {
-            Authorization: `Bearer ${user.token}`,
-            },
-        });
-        const updatedFlashcards = await res.json()
-        if (res.ok) {
-            dispatch(deleteFlashcard(updatedFlashcards));
-        }
-        } catch (error) {
-            console.log(error);
-        }
+    try {
+      const res = await fetch(`http://localhost:3000/flashcards/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+      const updatedFlashcards = await res.json();
+      if (res.ok) {
+        dispatch(deleteFlashcard(updatedFlashcards));
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -39,15 +30,15 @@ const Card = ({flashcard}) => {
     <>
       <div className="flashcard">
         <div className="card">
-            <div className="front">
-                <p>{flashcard.frontSide}</p>
-            </div>
-            <div className="back">
-                <p>{flashcard.backSide}</p>
-            </div>
-            </div>
-                <button onClick={handleDeleteFlashcard}>Delete</button>
-            </div>
+          <div className="front">
+            <p>{flashcard.frontSide}</p>
+          </div>
+          <div className="back">
+            <p>{flashcard.backSide}</p>
+          </div>
+        </div>
+        <button onClick={handleDeleteFlashcard}>Delete</button>
+      </div>
     </>
   );
 };
