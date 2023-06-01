@@ -50,7 +50,7 @@ const CreatePage = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const flashcard = { frontSide, backSide, category, username:user.username };
+		const flashcard = { frontSide, backSide, category, username: user.username };
 
 		const options = {
 			method: 'POST',
@@ -89,7 +89,7 @@ const CreatePage = () => {
 				<label htmlFor="frontSide">
 					<b>Question</b>
 				</label>
-				<input type="text" id="question" name="frontSide" onChange={handleInputQuestion} />
+				<input type="text" id="frontSide" name="frontSide" onChange={handleInputQuestion} />
 
 				<label htmlFor="category">
 					<b>Category</b>
@@ -99,7 +99,7 @@ const CreatePage = () => {
 				<label htmlFor="backSide">
 					<b>Answer</b>
 				</label>
-				<textarea id="answer" name="backSide" rows="5" cols="50" onChange={handleInputAnswer} />
+				<textarea id="backSide" name="backSide" rows="5" cols="50" onChange={handleInputAnswer} />
 
 				<button>Create</button>
 				<ToastContainer />

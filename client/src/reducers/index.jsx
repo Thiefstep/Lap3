@@ -9,9 +9,7 @@ export const flashcardsReducer = (state, action) => {
 				flashcards: [action.payload, ...state.flashcards],
 			};
 		case 'DELETE_FLASHCARD':
-			return {
-				flashcard: state.flashcards.filter((f) => f._id !== action.payload._id),
-			};
+			return { flashcards: state.flashcards.filter((f) => f._id !== action.payload._id) };
 		default:
 			return state;
 	}

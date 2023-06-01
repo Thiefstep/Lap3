@@ -39,8 +39,6 @@ export const useSignup = () => {
 			setIsLoading(false);
 			errorCreate(`${data.error}`);
 			setError(data.error);
-			console.log(error);
-			// console.log('error useSignup l42');
 		}
 
 		if (res.ok) {

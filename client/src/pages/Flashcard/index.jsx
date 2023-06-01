@@ -14,8 +14,8 @@ const Flashcard = () => {
 			try {
 				const res = await fetch('http://localhost:3000/flashcards', {
 					headers: {
-					Authorization: `Bearer ${user.token}`,
-                    username:user.username
+						Authorization: `Bearer ${user.token}`,
+						username: user.username,
 					},
 				});
 				const data = await res.json();
@@ -39,8 +39,6 @@ const Flashcard = () => {
 			setCurCardId((prevCardId) => prevCardId - 1);
 		}
 	};
-
-    
 
 	return (
 		<div className="home">
