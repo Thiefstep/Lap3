@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Card = ({front, back}) => {
+    const [isVisible, setIsVisible] = useState(true)
+
+    const handleDelete = () => {
+        setIsVisible(false)
+    }
 
     return<>
+        { isVisible && (
         <div className="flashcard">
             <div className='card'>
                 <div className='front'>
@@ -12,7 +18,9 @@ const Card = ({front, back}) => {
                     <p>{back}</p>
                 </div>
             </div>
+            <button onClick={handleDelete}><Delete></Delete></button>
         </div>
+    )}
     </>
 }
 
