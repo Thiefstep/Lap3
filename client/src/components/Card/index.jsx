@@ -11,7 +11,7 @@ const Card = ({ flashcard }) => {
 		const id = flashcard._id;
 
 		try {
-			const res = await fetch(`http://localhost:3000/flashcards/${id}`, {
+			const res = await fetch(`https://crammer-api.onrender.com/flashcards/${id}`, {
 				method: 'DELETE',
 				headers: {
 					Authorization: `Bearer ${user.token}`,
@@ -29,7 +29,7 @@ const Card = ({ flashcard }) => {
 	useEffect(() => {
 		const fetchFlashcards = async () => {
 			try {
-				const res = await fetch('http://localhost:3000/flashcards', {
+				const res = await fetch('https://crammer-api.onrender.com/flashcards', {
 					headers: {
 						Authorization: `Bearer ${user.token}`,
 						username: user.username,

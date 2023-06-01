@@ -68,7 +68,7 @@ const CreatePage = () => {
 		};
 
 		try {
-			const res = await fetch('http://localhost:3000/flashcards', options);
+			const res = await fetch('https://crammer-api.onrender.com/flashcards', options);
 			const data = await res.json();
 
 			if (!res.ok) {

@@ -12,7 +12,7 @@ const Flashcard = () => {
 	useEffect(() => {
 		const fetchFlashcards = async () => {
 			try {
-				const res = await fetch('http://localhost:3000/flashcards', {
+				const res = await fetch('https://crammer-api.onrender.com/flashcards', {
 					headers: {
 						Authorization: `Bearer ${user.token}`,
 						username: user.username,
