@@ -56,7 +56,7 @@ const CreatePage = () => {
       category,
       username: user.username,
     };
-
+    console.log(flashcard);
     const options = {
       method: "POST",
       body: JSON.stringify(flashcard),
