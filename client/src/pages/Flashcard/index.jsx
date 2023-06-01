@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card } from "../../components";
+import { Card, CardFilters } from "../../components";
 import { useFlashcards } from "../../hooks/useFlashcards";
 import { useAuth } from "../../hooks/useAuth";
 import { setFlashcards } from "../../actions";
@@ -39,9 +39,14 @@ const Flashcard = () => {
       setCurCardId((prevCardId) => prevCardId - 1);
     }
   };
+  //   const uniqueCate = [...new Set(flashcards.map((Cate) => Cate.category))];
 
   return (
     <div className="home">
+      {/* {flashcards.map((Cate) => Cate.category)}
+      {<CardFilters flashcard={uniqueCate} />} */}
+      {flashcards &&
+        flashcards.map((f) => <CardFilters key={f._id} flashcard={f} />)}
       {flashcards && flashcards.map((f) => <Card key={f._id} flashcard={f} />)}
 
       <div className="flashbtn">
