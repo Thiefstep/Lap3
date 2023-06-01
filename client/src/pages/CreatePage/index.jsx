@@ -37,6 +37,12 @@ const CreatePage = () => {
 			theme: 'light',
 		});
 
+	const resetForm = () => {
+		setFrontSide('');
+		setBackSide('');
+		setCategory('');
+	};
+
 	const handleInputQuestion = (e) => {
 		setFrontSide(e.target.value);
 	};
@@ -70,12 +76,9 @@ const CreatePage = () => {
 			}
 
 			if (res.ok) {
-				setFrontSide('');
-				setBackSide('');
-				setCategory('');
-
 				successCreate('Flash card has been created!');
 				dispatch(createFlashcards(data));
+				resetForm();
 			}
 		} catch (error) {
 			console.log(error);
@@ -94,14 +97,14 @@ const CreatePage = () => {
 				<label htmlFor="category">
 					<b>Category</b>
 				</label>
-				<input type="text" id="category" name="category" onChange={handleInputCategory} />
+				<input type="text" id="category" name="category" value={category} onChange={handleInputCategory} />
 
 				<label htmlFor="backSide">
 					<b>Answer</b>
 				</label>
 				<textarea id="backSide" name="backSide" rows="5" cols="50" onChange={handleInputAnswer} />
 
-				<button>Create</button>
+				<button type="submit">Create</button>
 				<ToastContainer />
 			</form>
 		</>

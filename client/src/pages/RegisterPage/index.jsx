@@ -45,7 +45,7 @@ const RegisterPage = () => {
 				</label>
 				<input type="password" id="password" name="password" onChange={handleInputPassword} />
 
-				<button disabled={isLoading}>Register</button>
+				<button className='Reg' disabled={isLoading}>Register</button>
 				<p>
 					Have an account already?<NavLink to="/login">Login</NavLink>
 				</p>
