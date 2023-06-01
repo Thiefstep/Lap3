@@ -9,15 +9,16 @@ const Flashcard = () => {
   const { flashcards, dispatch } = useFlashcards();
   const { user } = useAuth();
 
-  useEffect(() => {
-    const fetchFlashcards = async () => {
-      try {
-        const res = await fetch("http://localhost:3000/flashcards", {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        });
-        const data = await res.json();
+	useEffect(() => {
+		const fetchFlashcards = async () => {
+			try {
+				const res = await fetch('http://localhost:3000/flashcards', {
+					headers: {
+					Authorization: `Bearer ${user.token}`,
+                    username:user.username
+					},
+				});
+				const data = await res.json();
 
         if (res.ok) {
           dispatch(setFlashcards(data));
@@ -39,9 +40,17 @@ const Flashcard = () => {
     }
   };
 
+<<<<<<< HEAD
   return (
     <div className="home">
       {flashcards && flashcards.map((f) => <Card key={f._id} flashcard={f} />)}
+=======
+    
+
+	return (
+		<div className="home">
+			{flashcards && flashcards.map((f) => <Card key={f._id} flashcard={f} />)}
+>>>>>>> development
 
       <div className="flashbtn">
         <button onClick={handlePreviousCard}>Previous</button>

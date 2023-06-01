@@ -50,7 +50,12 @@ const CreatePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const flashcard = { frontSide, backSide, category };
+    const flashcard = {
+      frontSide,
+      backSide,
+      category,
+      username: user.username,
+    };
 
     const options = {
       method: "POST",
