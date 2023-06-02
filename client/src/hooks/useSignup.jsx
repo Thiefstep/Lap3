@@ -32,7 +32,7 @@ export const useSignup = () => {
 			body: JSON.stringify({ username, email, password }),
 		};
 
-		const res = await fetch('https://crammer-api.onrender.com/signup', options);
+		const res = await fetch('https://crammer-api.onrender.com/users/signup', options);
 		const data = await res.json();
 
 		if (!res.ok) {
