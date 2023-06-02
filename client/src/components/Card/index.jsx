@@ -58,7 +58,7 @@ const Card = ({ flashcard }) => {
 						<p>{flashcard.backSide}</p>
 					</div>
 				</div>
-				<button aria-label="Delete" onClick={handleDeleteFlashcard}>
+				<button className='Delete' aria-label="Delete" onClick={handleDeleteFlashcard}>
 					Delete
 				</button>
 			</div>
