@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { createFlashcards } from "../../actions";
-import { useFlashcards } from "../../hooks/useFlashcards";
-import { useAuth } from "../../hooks/useAuth";
+import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { createFlashcards } from '../../actions';
+import { useFlashcards } from '../../hooks/useFlashcards';
+import { useAuth } from '../../hooks/useAuth';
 
 const CreatePage = () => {
 	const { dispatch } = useFlashcards();
@@ -37,11 +37,11 @@ const CreatePage = () => {
 			theme: 'light',
 		});
 
-		const resetForm = () => {
-			setFrontSide('');
-			setBackSide('');
-			setCategory('');
-		};
+	const resetForm = () => {
+		setFrontSide('');
+		setBackSide('');
+		setCategory('');
+	};
 
 	const handleInputQuestion = (e) => {
 		setFrontSide(e.target.value);
@@ -55,9 +55,9 @@ const CreatePage = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		
-		const flashcard = { frontSide, backSide, category, username:user.username };
-		
+
+		const flashcard = { frontSide, backSide, category, username: user.username };
+
 		const options = {
 			method: 'POST',
 			body: JSON.stringify(flashcard),
@@ -66,9 +66,9 @@ const CreatePage = () => {
 				Authorization: `Bearer ${user.token}`,
 			},
 		};
-		
+
 		try {
-			const res = await fetch('http://localhost:3000/flashcards', options);
+			const res = await fetch('https://crammer-api.onrender.com/flashcards', options);
 			const data = await res.json();
 
 			if (!res.ok) {
@@ -78,7 +78,7 @@ const CreatePage = () => {
 			if (res.ok) {
 				successCreate('Flash card has been created!');
 				dispatch(createFlashcards(data));
-				resetForm()
+				resetForm();
 			}
 		} catch (error) {
 			console.log(error);
@@ -92,7 +92,7 @@ const CreatePage = () => {
 				<label htmlFor="frontSide">
 					<b>Question</b>
 				</label>
-				<input type="text" id="question" name="frontSide" value={frontSide} onChange={handleInputQuestion} />
+				<input type="text" id="frontSide" name="frontSide" value={frontSide} onChange={handleInputQuestion} />
 
 				<label htmlFor="category">
 					<b>Category</b>
@@ -102,7 +102,7 @@ const CreatePage = () => {
 				<label htmlFor="backSide">
 					<b>Answer</b>
 				</label>
-				<textarea id="answer" name="backSide" rows="5" cols="50" value={backSide} onChange={handleInputAnswer} />
+				<textarea id="backSide" name="backSide" rows="5" cols="50" value={backSide} onChange={handleInputAnswer} />
 
 				<button type="submit">Create</button>
 				<ToastContainer />

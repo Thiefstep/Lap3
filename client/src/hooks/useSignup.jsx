@@ -32,15 +32,13 @@ export const useSignup = () => {
 			body: JSON.stringify({ username, email, password }),
 		};
 
-		const res = await fetch('http://localhost:3000/users/signup', options);
+		const res = await fetch('https://crammer-api.onrender.com/signup', options);
 		const data = await res.json();
 
 		if (!res.ok) {
 			setIsLoading(false);
 			errorCreate(`${data.error}`);
 			setError(data.error);
-			console.log(error);
-			// console.log('error useSignup l42');
 		}
 
 		if (res.ok) {
